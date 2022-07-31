@@ -51,7 +51,7 @@ Depiction of Referencing in ResNets (Note the inability to reference further tha
 The `Decoder` (blue) takes that representation and step-by-step generates an output while also being fed the previous outputs recurently until the 'end of sentence' token is generated
 
 <p align="left">
-<img src="data/PIC 4.png"/>
+<img src="data/PIC 5.png"/>
 </p>
 
 # Step-Wise Breakdown of Transformer Mechanics
@@ -80,7 +80,7 @@ The encoder layer contains two submodules:
 ## `Multi-Headed Attention Module`
 
 <p align="left">
-<img src="data/PIC 5.png"/>
+<img src="data/PIC 6.png"/>
 </p>
 
 The multi-headed attention module applies `self-attention` which allows it to associate each individual word in the input with every other word in the input 
@@ -108,7 +108,7 @@ In summary, multi-headed attention takes in the positiional input embedding from
 The next step takes the `multi-headed attentiion` output and adds it to the input through a `residual connection`
 
 <p align="left">
-<img src="data/PIC 6.png"/>
+<img src="data/PIC 7.png"/>
 </p>
 The ouput of the concatenation is then fed into a normalization layer and then fed into a point-wise feed forward sequence of layers
 * This sequence of layers is a couple of linear layers with ReLu activations in between
@@ -116,7 +116,7 @@ The ouput of the concatenation is then fed into a normalization layer and then f
 The ouput of the point-wise feed forward sequence is then normalized again and combined with the previous normalized output of the concatenated `Positional Input Embeddings` and `Multi-Headed Attention Output` vectors through another residual connection:
 
 <p align="left">
-<img src="data/PIC 7.png"/>
+<img src="data/PIC 8.png"/>
 </p>
 
 
@@ -141,7 +141,7 @@ The positional output embeddings are fed into the first multi-headed attention m
 * Since the decoder is auto regressive, it must be prevented from conditioning to future tokens and should only focus on past tokens
 
 <p align="left">
-<img src="data/PIC 8.png"/>
+<img src="data/PIC 9.png"/>
 </p>
 
 
@@ -152,19 +152,19 @@ The method that prevents the model from calculating attention scores for future 
 * A look-ahead mask is applied to the attention scores before the calculation is done:
 
 <p align="left">
-<img src="data/PIC 9.png"/>
+<img src="data/PIC 10.png"/>
 </p>
 
 * The masked scores are replaced with negative infinities
   * The reason for this is that when the soft-max layer is applied to the masked scores, the negative infinities are converrted to 0 which means the model won't use those future tokens 
 <p align="left">
-<img src="data/PIC 10.png"/>
+<img src="data/PIC 11.png"/>
 </p>
 
 This masking is the only difference in the first multi-headed attention module
 
 <p align="left">
-<img src="data/PIC 11.png"/>
+<img src="data/PIC 12.png"/>
 </p>
 
 ## Step 7: Decoder Multi-Headed Attention 2
