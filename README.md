@@ -2,5 +2,5 @@
 This is an implementation and educational reference guide on what transformers are, what they're good for, and an example of how to build one!
 
 <p align="left">
-<img src="data/PIC 1.PNG"/>
+<img src="data/PIC 1.png"/>
 </p>
