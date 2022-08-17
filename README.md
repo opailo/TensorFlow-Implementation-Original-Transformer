@@ -111,6 +111,7 @@ The next step takes the `multi-headed attentiion` output and adds it to the inpu
 <img src="data/PIC 7.png"/>
 </p>
 The ouput of the concatenation is then fed into a normalization layer and then fed into a point-wise feed forward sequence of layers
+
 * This sequence of layers is a couple of linear layers with ReLu activations in between
 
 The ouput of the point-wise feed forward sequence is then normalized again and combined with the previous normalized output of the concatenated `Positional Input Embeddings` and `Multi-Headed Attention Output` vectors through another residual connection:
