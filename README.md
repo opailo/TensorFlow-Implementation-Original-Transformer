@@ -11,7 +11,7 @@ Transformers are typically utilized in natural language processing models such a
 
 Advantages:
 * Transformer models are highly parallelizable which means much better efficiency
-* It makes no assumptions about the temporal / spatial relationships across data which makes it ideal for procession a set of objects
+* It makes no assumptions about the temporal / spatial relationships across data which makes it ideal for processing a set of objects
 * Distant items can affect each other's output without passing through many RNN-steps or through many convolutional layers
 
 Disadvantages:
